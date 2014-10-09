@@ -1,0 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Droid+Sans:400,700);
+
+.tool-container {
+	padding: 10px;
+	box-sizing:  border-box;
+}
+
+#message-receviers {
+	margin-top: 50px;
+}
+
+.text-right {
+	text-align: right;
+}
+
+.pure-tab {
+	display: none;
+}
+
+.pure-g [class *="pure-u"] {
+	 font-family: inherit; 
+}
+
+.hide {
+	display: none;
+}
+
+.success-row {
+	border: 1px solid;
+	color: #4F8A10;
+	background-color: #DFF2BF;
+}
+
+.fail-row {
+	border: 1px solid;
+	color: #D8000C;
+	background-color: #FFBABA;
+}

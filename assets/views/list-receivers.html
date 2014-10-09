@@ -1,0 +1,36 @@
+{{#if length}}
+<div class="message-pane hide"></div>
+<table class="pure-table pure-table-bordered">
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Phone Number</th>
+			<th>Dept/Company</th>
+			<th>Status</th>
+			<th>Edit/Delete</th>
+		</tr>	
+	</thead>
+	<tbody>
+	{{#each this}}
+		<tr>
+			<td>{{first_name}}</td>
+			<td>{{last_name}}</td>
+			<td>{{phone_number}}</td>
+			<td>{{department}}</td>
+			<td>{{translateStatus status}}</td>
+			<td>
+				<a href="#/edit" class="edit-receiver" data-receiver-id =  "{{id}}">Edit</a> |
+				<a href="#/delete" class="delete-receiver" data-receiver-id =  "{{id}}">Delete</a>
+			</td>	
+		</tr>
+		
+	{{/each}}	
+	</tbody>
+	<tfoot>
+		
+	</tfoot>
+</table>
+{{else}}
+<div class="error">You haven't added any recepients yet.  <a href="#/add-recevier" class="add-receiver"><strong>Add</strong></a> a recepient now.</div>
+{{/if}}

@@ -1,0 +1,55 @@
+<form class="pure-form pure-form-aligned" role="form" id="send-message-form">
+	<div class="message-pane hide"></div>
+	<table class="form-table">
+		<tr>
+			<th scope="row">Message (<a href="/#help" class="message-help">Help</a>)</th>
+			<td>
+				<textarea class="widefat" rows="3" id="message" name="message"></textarea>
+				<div class="" id="message-char-count">0 characters entered.</div>
+				
+				<div id="message-help" class="hide">
+					You can use the following fields (the content within the " - double quotes) to replace the recipient's information.
+					<ul>
+						<li>"%(first_name)s" for First Name of the recipient</li>
+						<li>"%(last_name)s" for Last Name of the recipient</li>
+						<li>"%(phone_number)s" for Phone Number of the recipient</li>
+						<li>"%(department)s" for Dept/Company of the recipient</li>
+					</ul>
+					<div class="text-right">
+						<a href="/#close-help" class="button-primary close-message-help">Hide</a>	
+					</div>
+				</div>
+			</td>
+		</tr>
+		<tr>
+			<th scope="row"></th>
+			<td>
+				<div class="text-right">
+					<button type="submit" class="pure-button pure-button-active save-receiver">Send Message</button>	
+				</div>
+			</td>
+		</tr>
+	</table>
+	<div id="message-receviers">
+		<div class="pure-g">
+			<div class="pure-u-1-3"></div>
+			<div class="pure-u-2-3">
+				<div class="text-right">
+					<a href="/select-all-receviers" class="pure-button pure-button-active select-all-receviers toggle-select" data-select="1">Select All</a>
+					<a href="/unselect-all-receviers" class="pure-button  unselect-all-receviers toggle-select" data-select="0">Unselect All</a>	
+				</div>
+			</div>
+		</div>
+		<h3><span class="label label-default">Message Recepients </span></h3>
+		<div class="pure-g">
+			{{#each this}}
+			<div class="pure-u-1-1">
+				<label for="receiver-{{id}}">
+					<input type="checkbox" value="{{id}}" id="receiver-{{id}}"  name="receivers[]" class="receiver-selection">
+					{{first_name}} {{last_name}}
+				</label>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+</form>

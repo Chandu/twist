@@ -1,0 +1,46 @@
+<form class="pure-form pure-form-aligned" role="form" id="edit-receiver-form">
+	<div class="message-pane hide"></div>
+	<input type="hidden" name="receiverId" value="{{id}}">
+
+	<table class="form-table">
+		<tr>
+			<th scope="row">First Name</th>
+			<td>
+				<input type="text" class="" name="firstName" id="firstName" placeholder="First Name" value="{{first_name}}">	
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">Last Name</th>
+			<td>
+				<input type="text" class="" name="lastName" id="lastName" placeholder="Last Name" value="{{last_name}}">
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">Phone Name</th>
+			<td>
+				<input type="text" class="" name="phoneNumber" id="phoneNumber" placeholder="+XXX (XXX) - XXX - XXXX"  value="{{phone_number}}">
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">Dept/Company</th>
+			<td>
+				<input type="text" class="" name="department" id="department"  value="{{department}}">
+			</td>
+		</tr>
+		<tr>
+			<th scope="row">Status</th>
+			<td>
+				<label class="radio-inline" for="statusActive"><input type="radio" id="statusActive" name="status" value="1" {{#equalsTo status 1}} checked {{/equalsTo}}> Active</label>
+				<label class="radio-inline" for="statusInactive"><input type="radio" id="statusInactive" name="status" value="1" {{#equalsTo status 0}} checked {{/equalsTo}}> Inactive</label>	
+			</td>
+		</tr>
+		<tr>
+			<th scope="row"></th>
+			<td>
+				<div>
+					<button type="submit" class="button-primary save-receiver">Save</button>	
+				</div>
+			</td>
+		</tr>
+	</table>
+</form>

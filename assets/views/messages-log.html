@@ -1,0 +1,46 @@
+{{#if messages}}
+<div class="message-pane hide"></div>
+<table class="pure-table pure-table-bordered">
+	<thead>
+		<tr>
+			<th>First Name</th>
+			<th>Last Name</th>
+			<th>Phone Number</th>
+			<th>Dept/Company</th>
+			<th>Sent Date</th>
+			<th>Response Status</th>
+			<th>Message</th>
+		</tr>	
+	</thead>
+	<tbody>
+	{{#each messages}}
+		<tr class="{{#isSuccessResponse response_code}} success-row {{else}} fail-row  {{/isSuccessResponse}}"  data-message-template="{{template}}">
+			<td>{{first_name}}</td>
+			<td>{{last_name}}</td>
+			<td>{{phone_number}}</td>
+			<td>{{department}}</td>
+			<td>{{sent_date}}</td>
+			<td>{{response_message}}</td>
+			<td><a href="#/show-message-template" class="show-message-template">Message</a></td>
+		</tr>
+		
+	{{/each}}	
+	</tbody>
+	<tfoot>
+		<table class="pure-table">
+			<tr>
+				{{#each chunks}}
+				{{#equalsTo this ../page}}
+				<td>{{this}}</td>
+				{{else}}
+				<td>
+					<a class="page-link" data-page="{{this}}" data-limit=" {{../../limit}}" href="">{{this}}</a></td>
+				{{/equalsTo }}
+				{{/each}}
+			</tr>
+		</table>
+	</tfoot>
+</table>
+{{else}}
+<div class="error">No messages found.  <a href="#/send-messages" class="send-messages"><strong>Send</strong></a> messages now.</div>
+{{/if}}
